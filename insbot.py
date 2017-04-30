@@ -31,7 +31,7 @@ def main(config):
     skipped_cycle = False
     while True:
         if not r.connected:
-            click.secho('%d: Waiting 60 seconds to reconnect' % int(time.time()))
+            click.secho('%d: Waiting %d seconds to reconnect' % (int(time.time()), interval * 2))
             time.sleep(interval * 2)
             r = rcon((server, port), c['insurgency']['password'])
             r.connect()
